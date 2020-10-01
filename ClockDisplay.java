@@ -87,8 +87,12 @@ public class ClockDisplay
         else {
             suffix = "am";
         }
+       
         if(hour>=12) {
             hour -=12;
+        }
+        if (hour ==0) {
+            hour=12;
         }
         displayString = hour + ":" + 
                         minutes.getDisplayValue() + suffix;
