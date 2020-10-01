@@ -9,8 +9,8 @@
  * and reacts by incrementing the display. This is done in the usual clock
  * fashion: the hour increments when the minutes roll over to zero.
  * 
- * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author Sergi Manolov
+ * @version 9/30/20
  */
 public class ClockDisplay
 {
@@ -78,7 +78,19 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
+        int hour= hours.getValue();
+        String suffix;
+        
+        if(hour>= 12) {
+            suffix = "pm";
+        }
+        else {
+            suffix = "am";
+        }
+        if(hour>=12) {
+            hour -=12;
+        }
         displayString = hours.getDisplayValue() + ":" + 
-                        minutes.getDisplayValue();
+                        minutes.getDisplayValue() + suffix;
     }
 }
