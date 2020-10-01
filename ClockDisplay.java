@@ -90,7 +90,7 @@ public class ClockDisplay
         if(hour>=12) {
             hour -=12;
         }
-        displayString = hours.getDisplayValue() + ":" + 
+        displayString = hour + ":" + 
                         minutes.getDisplayValue() + suffix;
     }
 }
